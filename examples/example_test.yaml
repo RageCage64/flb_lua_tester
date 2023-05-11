@@ -1,0 +1,27 @@
+scripts:
+  - file: "examples/example.lua"
+    call: "filter_entry"
+    tests:
+    - name: "adds y key"
+      input: 
+        tag: "hi"
+        timestamp: "2014-10-02T15:01:23Z"
+        record:
+          w: x
+      expected:
+        code: 0
+        timestamp: "2014-10-02T15:01:23Z"
+        record:
+          w: x
+          y: z
+    - name: "resets existing y key"
+      input: 
+        tag: "hi"
+        timestamp: "2014-10-02T15:01:23Z"
+        record:
+          y: something else
+      expected:
+        code: 0
+        timestamp: "2014-10-02T15:01:23Z"
+        record:
+          y: z

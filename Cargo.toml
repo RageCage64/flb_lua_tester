@@ -1,0 +1,9 @@
+[package]
+name = "flb_lua_tester"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mlua = { version = "0.8.8", features = ["luajit", "vendored", "serialize" ] }
+serde = { version = "1.0.162", features = ["derive"] }
+serde_yaml = "0.9.21"
